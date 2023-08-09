@@ -44,6 +44,9 @@ mkdir -p data
 
 # This is the main apache configuration
 cat <<EOF > auth/httpd.conf
+
+LoadModule mpm_event_module modules/mod_mpm_event.so
+
 LoadModule headers_module modules/mod_headers.so
 
 LoadModule authn_file_module modules/mod_authn_file.so
